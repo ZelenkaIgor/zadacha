@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Четное-нечетное</title>
+    <title>Mars</title>
 </head>
 <body>
- {% if number % 2 == 0 %}
-        <div>{{ number }} - чётное</div>
- {% else %}
-       <div>{{ number }} - нечётное</div>
- {% endif %}
+<h1>Professions</h1>
+{% if list_t == 'ol' %}
+    {% for item in professions %}
+        <h2>{{loop.index}. {{item}}</h2>
+    {% endfor %}
+{% elif list_t == 'ul' %}
+    {% for item in professions %}
+        <h2>* {{item}}</h2>
+    {% endfor %}
+{% else %}
+    <h2>Error: this parameter is not availible</h2>
+{% endif %}
 </body>
 </html>
